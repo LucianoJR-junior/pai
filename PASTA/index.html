@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Homenagem para o Pai</title>
+  <body>
+    <a href="index.html"></a>
+  </body>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+      font-family: 'Georgia', serif;
+      overflow: hidden;
+    }
+
+    .scene, .photo-scene {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2em;
+      text-align: center;
+      opacity: 0;
+      animation: fadeInOut 3s ease-in-out forwards;
+      color: white;
+    }
+
+    .photo-scene img {
+      max-width: 100%;
+      max-height: 80vh;
+      border: 8px solid white;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      alt: "Imagem do pai";
+    }
+
+    #final-message {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 4em;
+      font-weight: bold;
+      color: #f9d71c;
+      text-align: center;
+      text-shadow: 2px 2px 10px black;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes pulse {
+      0% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.05); }
+      100% { transform: translate(-50%, -50%) scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Áudio escondido que começa automaticamente -->
+  <audio autoplay loop style="display:none;">
+    <source src="videoplayback.m4a" type="audio/mp4">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <!-- Frases -->
+  <div class="scene" style="animation-delay: 0s;" aria-live="polite">Em um dia muito especial...</div>
+  <div class="scene" style="animation-delay: 3s;" aria-live="polite">Um homem incrível merece mais do que palavras...</div>
+  <div class="scene" style="animation-delay: 6s;" aria-live="polite">Essa é uma pequena homenagem...</div>
+  <div class="scene" style="animation-delay: 9s;" aria-live="polite">De alguém que nunca esquece...</div>
+  <div class="scene" style="animation-delay: 12s;" aria-live="polite">ACHOU QUE EU TINHA ESQUECIDO É?</div>
+
+  <!-- Fotos -->
+  <div class="photo-scene" style="animation-delay: 15s;" aria-hidden="true"><img src="https://via.placeholder.com/800x600?text=Foto+1" alt="Foto 1"></div>
+  <div class="photo-scene" style="animation-delay: 18s;" aria-hidden="true"><img src="https://via.placeholder.com/800x600?text=Foto+2" alt="Foto 2"></div>
+  <div class="photo-scene" style="animation-delay: 21s;" aria-hidden="true"><img src="https://via.placeholder.com/800x600?text=Foto+3" alt="Foto 3"></div>
+  <div class="photo-scene" style="animation-delay: 24s;" aria-hidden="true"><img src="https://via.placeholder.com/800x600?text=Foto+4" alt="Foto 4"></div>
+  <div class="photo-scene" style="animation-delay: 27s;" aria-hidden="true"><img src="https://via.placeholder.com/800x600?text=Foto+5" alt="Foto 5"></div>
+  <div class="photo-scene" style="animation-delay: 30s;" aria-hidden="true"><img src="https://via.placeholder.com/800x600?text=Foto+6" alt="Foto 6"></div>
+  <div class="photo-scene" style="animation-delay: 33s;" aria-hidden="true"><img src="https://via.placeholder.com/800x600?text=Foto+7" alt="Foto 7"></div>
+  <div class="photo-scene" style="animation-delay: 36s;" aria-hidden="true"><img src="https://via.placeholder.com/800x600?text=Foto+8" alt="Foto 8"></div>
+  <div class="photo-scene" style="animation-delay: 39s;" aria-hidden="true"><img src="https://via.placeholder.com/800x600?text=Foto+9" alt="Foto 9"></div>
+  <div class="photo-scene" style="animation-delay: 42s;" aria-hidden="true"><img src="https://via.placeholder.com/800x600?text=Foto+10" alt="Foto 10"></div>
+
+  <!-- Mensagem final -->
+  <div id="final-message" aria-live="assertive">TE AMO PAI ❤️</div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelectorAll('.scene, .photo-scene').forEach(el => el.style.display = 'none');
+      document.getElementById('final-message').style.display = 'block';
+    }, 46000);
+  </script>
+
+</body>
+</html>
